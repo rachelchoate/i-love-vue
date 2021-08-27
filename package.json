@@ -1,6 +1,13 @@
 {
     "name": "i-love-vue",
-    "version": "0.1.0",
+    "author": {
+        "name": "Rachel Choate",
+        "email": "rachel.j.choate@gmail.com",
+        "url": "https://github.com/rachelchoate/"
+    },
+    "description": "Example Vue.js project inspired by the mobile game 'I Love Hue'.",
+    "homepage": "https://github.com/rachelchoate/i-love-vue",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
