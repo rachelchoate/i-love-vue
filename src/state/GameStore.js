@@ -47,7 +47,6 @@ const applyLockedPixels = (array, lockedPixels) => {
 /** generate a new game */
 const initializeGame = (state) => {
     const game = generateGameboard(state.rows, state.cols);
-    console.log(game);
     const lockedPixels = getFourCorners(game);
     state.lockedPixels = lockedPixels;
     applyLockedPixels(game, lockedPixels);
@@ -59,16 +58,14 @@ const initializeGame = (state) => {
 
 /** select a pixel */
 function selectPixel(state, coords) {
+    coords = [parseInt(coords[0], 10), parseInt(coords[1], 10)];
     if (!state.lockedPixels.includes(coords)) {
-        switch (state.selectedPixel) {
-            case null:
-                state.selectedPixel = coords;
-                break;
-            case coords:
-                state.selectedPixel = null;
-                break;
-            default:
-                this.commit('movePixel', coords);
+        if (!state.selectedPixel) {
+            state.selectedPixel = coords;
+        } else if (state.selectedPixel[0] === coords[0] && state.selectedPixel[1] === coords[1]) {
+            state.selectedPixel = null;
+        } else {
+            this.commit('movePixel', coords);
         }
     }
 }
@@ -84,7 +81,6 @@ function movePixel(state, coords) {
 /** check if gameboard has been completed */
 const checkCompletion = (state) => {
     state.gameCompleted = compareMatrices(state.currentPixels, state.correctPixels);
-    console.log(compareMatrices(state.currentPixels, state.correctPixels));
 };
 
 /** update the number of rows of pixels to generate */

@@ -7,7 +7,7 @@
         <input
             type="number"
             id="cols-input"
-            v-model.number="cols"
+            :value="cols"
             v-on:change="updateGameWidth"
             min="3"
             max="25"
@@ -19,7 +19,7 @@
         <input
             type="number"
             id="rows-input"
-            v-model.number="rows"
+            :value="rows"
             v-on:change="updateGameHeight"
             min="3"
             max="25"

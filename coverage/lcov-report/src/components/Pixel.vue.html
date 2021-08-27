@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -171,44 +171,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,45 +266,45 @@ export default {
     name: 'Pixel',
     props: ['x', 'y'],
     computed: {
-<span class="fstat-no" title="function not covered" >        height() {</span>
-<span class="cstat-no" title="statement not covered" >            return `${this.$store.state.pixelHeight}px`;</span>
+        height() {
+            return `${this.$store.state.pixelHeight}px`;
         },
-<span class="fstat-no" title="function not covered" >        width() {</span>
-<span class="cstat-no" title="statement not covered" >            return `${this.$store.state.pixelWidth}px`;</span>
+        width() {
+            return `${this.$store.state.pixelWidth}px`;
         },
-<span class="fstat-no" title="function not covered" >        top() {</span>
-<span class="cstat-no" title="statement not covered" >            const pos = this.x * this.$store.state.pixelHeight;</span>
-<span class="cstat-no" title="statement not covered" >            return `${pos}px`;</span>
+        top() {
+            const pos = this.x * this.$store.state.pixelHeight;
+            return `${pos}px`;
         },
-<span class="fstat-no" title="function not covered" >        left() {</span>
-<span class="cstat-no" title="statement not covered" >            const pos = this.y * this.$store.state.pixelWidth;</span>
-<span class="cstat-no" title="statement not covered" >            return `${pos}px`;</span>
+        left() {
+            const pos = this.y * this.$store.state.pixelWidth;
+            return `${pos}px`;
         },
-<span class="fstat-no" title="function not covered" >        background() {</span>
-<span class="cstat-no" title="statement not covered" >            const { r, g, b } = this.$store.state.currentPixels[this.x][this.y];</span>
-<span class="cstat-no" title="statement not covered" >            return `rgb(${r}, ${g}, ${b})`;</span>
+        background() {
+            const { r, g, b } = this.$store.state.currentPixels[this.x][this.y];
+            return `rgb(${r}, ${g}, ${b})`;
         },
-<span class="fstat-no" title="function not covered" >        active() {</span>
-<span class="cstat-no" title="statement not covered" >            if (this.$store.state.selectedPixel === null) return false;</span>
-<span class="cstat-no" title="statement not covered" >            return this.$store.state.selectedPixel[0] === this.x &amp;&amp; this.$store.state.selectedPixel[1] === this.y;</span>
+        active() {
+            if (this.$store.state.selectedPixel === null) return false;
+            return this.$store.state.selectedPixel[0] === this.x &amp;&amp; this.$store.state.selectedPixel[1] === this.y;
         },
-<span class="fstat-no" title="function not covered" >        locked() {</span>
-<span class="cstat-no" title="statement not covered" >            return this.$store.state.currentPixels[this.x][this.y].locked;</span>
+        locked() {
+            return this.$store.state.currentPixels[this.x][this.y].locked;
         },
-<span class="fstat-no" title="function not covered" >        completed() {</span>
-<span class="cstat-no" title="statement not covered" >            return this.$store.state.gameCompleted;</span>
+        completed() {
+            return this.$store.state.gameCompleted;
         },
-<span class="fstat-no" title="function not covered" >        activeClass() {</span>
-<span class="cstat-no" title="statement not covered" >            let className = 'pixel';</span>
-<span class="cstat-no" title="statement not covered" >            if (this.active) className += ' active';</span>
+        activeClass() {
+            let className = 'pixel';
+            if (this.active) className += ' active';
             else if (this.completed) className += ' complete';
             else if (this.locked) className += ' locked';
-<span class="cstat-no" title="statement not covered" >            return className;</span>
+            return className;
         },
     },
     methods: {
-<span class="fstat-no" title="function not covered" >        select() {</span>
-<span class="cstat-no" title="statement not covered" >            if (!this.locked) this.$store.commit('selectPixel', [this.x, this.y]);</span>
+        select() {
+<span class="missing-if-branch" title="else path not taken" >E</span>            if (!this.locked) this.$store.commit('selectPixel', [this.x, this.y]);
         },
     },
 };
@@ -352,7 +352,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Aug 27 2021 11:44:20 GMT-0500 (Central Daylight Time)
+                at Fri Aug 27 2021 13:16:55 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

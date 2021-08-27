@@ -15,7 +15,6 @@
         </div>
         <hr />
         <Gameboard v-if="gameLoaded" />
-        <router-view></router-view>
     </div>
 </template>
 

@@ -62,7 +62,10 @@
         "collectCoverageFrom": [
             "<rootDir>/src/**/*.{js,vue}",
             "!**/node_modules/**",
-            "!<rootDir>/src/assets/**"
+            "!<rootDir>/src/assets/**",
+            "!<rootDir>/src/main.js",
+            "!<rootDir>/src/views/index.js",
+            "!<rootDir>/src/router/index.js"
         ],
         "setupFilesAfterEnv": [
             "<rootDir>/tests/setupFile.js"

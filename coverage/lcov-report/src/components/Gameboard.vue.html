@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -162,27 +162,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -236,27 +236,27 @@
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-<span class="cstat-no" title="statement not covered" >import { arrayFromNumber } from '../utils/arrayUtils.js';</span>
-<span class="cstat-no" title="statement not covered" >import Pixel from './Pixel.vue';</span>
+import { arrayFromNumber } from '../utils/arrayUtils.js';
+import Pixel from './Pixel.vue';
 &nbsp;
 export default {
     name: 'Gameboard',
     components: { Pixel },
     computed: {
-<span class="fstat-no" title="function not covered" >        height() {</span>
-<span class="cstat-no" title="statement not covered" >            return `${this.$store.state.canvasHeight}px`;</span>
+        height() {
+            return `${this.$store.state.canvasHeight}px`;
         },
-<span class="fstat-no" title="function not covered" >        width() {</span>
-<span class="cstat-no" title="statement not covered" >            return `${this.$store.state.canvasWidth}px`;</span>
+        width() {
+            return `${this.$store.state.canvasWidth}px`;
         },
-<span class="fstat-no" title="function not covered" >        rows() {</span>
-<span class="cstat-no" title="statement not covered" >            return arrayFromNumber(this.$store.state.rows);</span>
+        rows() {
+            return arrayFromNumber(this.$store.state.rows);
         },
-<span class="fstat-no" title="function not covered" >        cols() {</span>
-<span class="cstat-no" title="statement not covered" >            return arrayFromNumber(this.$store.state.cols);</span>
+        cols() {
+            return arrayFromNumber(this.$store.state.cols);
         },
-<span class="fstat-no" title="function not covered" >        gameWon() {</span>
-<span class="cstat-no" title="statement not covered" >            return this.$store.state.gameCompleted;</span>
+        gameWon() {
+            return this.$store.state.gameCompleted;
         },
     },
 };
@@ -286,7 +286,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Aug 27 2021 11:44:20 GMT-0500 (Central Daylight Time)
+                at Fri Aug 27 2021 13:16:55 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
