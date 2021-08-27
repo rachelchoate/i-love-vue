@@ -2,10 +2,7 @@ import { generateRandomColor, generateColorGradient } from './colorUtils.js';
 import { arrayFromNumber } from './arrayUtils.js';
 
 /** generate gameboard */
-const generateGameboard = (canvasHeight, canvasWidth, pixelHeight, pixelWidth) => {
-    const numRows = Math.floor(canvasHeight / pixelHeight);
-    const numCols = Math.floor(canvasWidth / pixelWidth);
-
+const generateGameboard = (numRows, numCols) => {
     const rows = arrayFromNumber(numRows);
 
     const colorTopLeft = generateRandomColor();

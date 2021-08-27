@@ -10,9 +10,10 @@
         <div style="text-align:left;">
             <b>Moves: </b>
             {{ moves }}
+            &nbsp;|&nbsp;
+            <b v-if="gameCompleted">You Won!</b>
         </div>
         <hr />
-        <h3 v-if="gameCompleted">You Won!</h3>
         <Gameboard v-if="gameLoaded" />
         <router-view></router-view>
     </div>

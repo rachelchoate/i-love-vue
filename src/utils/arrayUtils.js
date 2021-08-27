@@ -60,5 +60,5 @@ export const chunkArray = (array, chunkSize) => array.reduce((result, item, inde
 export const unflattenArray = (array, rowLength, colLength) => {
     const newRows = chunkArray(array, colLength);
     const newArray = chunkArray(newRows, rowLength);
-    return newArray;
+    return newArray[0];
 };

@@ -1,9 +1,13 @@
 <template>
     <div
         :class="activeClass"
-        v-bind:style="{ background, height, width, top, left }"
+        :style="{ background, height, width, top, left }"
         v-on:click="select"
-    />
+    >
+        <div class="locked-icon" v-if="locked" :style="{ height, width }">
+            <div class="icon" />
+        </div>
+    </div>
 </template>
 
 <script>
@@ -18,11 +22,11 @@ export default {
             return `${this.$store.state.pixelWidth}px`;
         },
         top() {
-            const pos = this.y * this.$store.state.pixelHeight;
+            const pos = this.x * this.$store.state.pixelHeight;
             return `${pos}px`;
         },
         left() {
-            const pos = this.x * this.$store.state.pixelWidth;
+            const pos = this.y * this.$store.state.pixelWidth;
             return `${pos}px`;
         },
         background() {
@@ -34,12 +38,17 @@ export default {
             return this.$store.state.selectedPixel[0] === this.x && this.$store.state.selectedPixel[1] === this.y;
         },
         locked() {
-            if (this.$store.state.currentPixels[this.x][this.y].locked) return true;
-            if (this.$store.state.gameCompleted) return true;
-            return false;
+            return this.$store.state.currentPixels[this.x][this.y].locked;
+        },
+        completed() {
+            return this.$store.state.gameCompleted;
         },
         activeClass() {
-            return `pixel ${this.locked ? 'locked' : ''} ${this.active ? 'active' : ''}`;
+            let className = 'pixel';
+            if (this.active) className += ' active';
+            else if (this.completed) className += ' complete';
+            else if (this.locked) className += ' locked';
+            return className;
         },
     },
     methods: {
@@ -53,6 +62,7 @@ export default {
 <style>
 .pixel {
     position: absolute;
+    z-index: 1000;
 }
 .active,
 .pixel:hover {
@@ -61,21 +71,26 @@ export default {
     box-shadow: 0 0 10px black;
     z-index: 2000;
 }
+.complete {
+    z-index: -1;
+}
+.complete:hover,
 .locked:hover {
     transform: none;
     cursor: default;
     box-shadow: none;
     z-index: inherit;
 }
-.locked::before {
-    //border-radius: 50%;
-    content: '';
-    position: absolute;
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
+.locked-icon {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.locked-icon .icon {
     background: black;
-    top: 25%;
-    left: 25%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
 }
 </style>

@@ -11,7 +11,7 @@ const shuffleGameboard = (gameboard) => {
     const flattenedArray = flattenArray(gameboard);
     durstenfeldShuffle(flattenedArray);
     const unflattenedArray = unflattenArray(flattenedArray, rowLength, colLength);
-    return unflattenedArray[0];
+    return unflattenedArray;
 };
 
 export default shuffleGameboard;

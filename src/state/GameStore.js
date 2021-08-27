@@ -9,10 +9,10 @@ import {
 
 /** Initial game board state */
 const InitialState = {
-    canvasHeight: 400,
-    canvasWidth: 400,
-    pixelHeight: 100,
-    pixelWidth: 100,
+    canvasHeight: 800,
+    canvasWidth: 800,
+    pixelHeight: 200,
+    pixelWidth: 200,
     currentPixels: [],
     correctPixels: [],
     lockedPixels: [],
@@ -20,8 +20,8 @@ const InitialState = {
     gameCompleted: false,
     lockCorners: true,
     moves: 0,
-    rows: 0,
-    cols: 0,
+    rows: 4,
+    cols: 4,
 };
 
 /** get four corners of gameboard */
@@ -46,16 +46,13 @@ const applyLockedPixels = (array, lockedPixels) => {
 
 /** generate a new game */
 const initializeGame = (state) => {
-    const game = generateGameboard(state.canvasHeight, state.canvasWidth, state.pixelHeight, state.pixelWidth);
+    const game = generateGameboard(state.rows, state.cols);
+    console.log(game);
     const lockedPixels = getFourCorners(game);
     state.lockedPixels = lockedPixels;
     applyLockedPixels(game, lockedPixels);
-    state.rows = arrayFromNumber(game.length);
-    state.cols = arrayFromNumber(game[0].length);
     state.correctPixels = deepCopyArray(game);
-    //state.currentPixels =
-    shuffleGameboard(game);
-    state.currentPixels = game;
+    state.currentPixels = shuffleGameboard(game);
     state.moves = 0;
     state.gameCompleted = false;
 };
@@ -87,29 +84,26 @@ function movePixel(state, coords) {
 /** check if gameboard has been completed */
 const checkCompletion = (state) => {
     state.gameCompleted = compareMatrices(state.currentPixels, state.correctPixels);
-    console.log('checked completion');
     console.log(compareMatrices(state.currentPixels, state.correctPixels));
 };
 
-/** update the desired height of the gameboard */
-const updateCanvasHeight = (state, height) => {
-    state.canvasHeight = height;
-};
+/** update the number of rows of pixels to generate */
+function updateGameHeight(state, height) {
+    if (height >= 3 && height <= 25) {
+        state.rows = parseInt(height, 10);
+        state.pixelHeight = state.canvasHeight / height;
+        this.commit('initializeGame');
+    }
+}
 
-/** update the desired width of the gameboard */
-const updateCanvasWidth = (state, width) => {
-    state.canvasWidth = width;
-};
-
-/** update the desried height of the pixels */
-const updatePixelHeight = (state, height) => {
-    state.pixelHeight = height;
-};
-
-/** update the desired width of the pixels */
-const updatePixelWidth = (state, width) => {
-    state.pixelWidth = width;
-};
+/** update the number of columns of pixels to generate */
+function updateGameWidth(state, width) {
+    if (width >= 3 && width <= 25) {
+        state.cols = parseInt(width, 10);
+        state.pixelWidth = state.canvasWidth / width;
+        this.commit('initializeGame');
+    }
+}
 
 const GameStore = {
     state: InitialState,
@@ -118,10 +112,8 @@ const GameStore = {
         selectPixel,
         movePixel,
         checkCompletion,
-        updateCanvasHeight,
-        updateCanvasWidth,
-        updatePixelHeight,
-        updatePixelWidth,
+        updateGameHeight,
+        updateGameWidth,
     },
 };
 

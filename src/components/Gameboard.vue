@@ -1,24 +1,35 @@
 <template>
     <div
         id="gameboard"
-        v-bind:style="{ height, width }"
+        :style="{ height, width }"
     >
         <div
             class="row"
-            v-for="(y) in rows"
-            :key="y"
+            v-for="(x) in rows"
+            :key="x"
         >
             <Pixel
-                v-for="(x) in cols"
-                :key="x"
+                v-for="(y) in cols"
+                :key="y"
                 :x="x"
                 :y="y"
+            />
+        </div>
+        <div
+            id="completed-heart"
+            v-if="gameWon"
+            :style="{ height, width }"
+        >
+            <i
+                class="ti-heart"
+                :style="{ fontSize: height }"
             />
         </div>
     </div>
 </template>
 
 <script>
+import { arrayFromNumber } from '../utils/arrayUtils.js';
 import Pixel from './Pixel.vue';
 
 export default {
@@ -32,10 +43,13 @@ export default {
             return `${this.$store.state.canvasWidth}px`;
         },
         rows() {
-            return this.$store.state.rows;
+            return arrayFromNumber(this.$store.state.rows);
         },
         cols() {
-            return this.$store.state.cols;
+            return arrayFromNumber(this.$store.state.cols);
+        },
+        gameWon() {
+            return this.$store.state.gameCompleted;
         },
     },
 };
@@ -45,5 +59,16 @@ export default {
 #gameboard {
     position: relative;
     margin: auto;
+}
+#completed-heart {
+    color: white;
+    z-index: 3000 !important;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#completed-heart i {
+    text-shadow: 0 0 20px white;
+    opacity: 0.7;
 }
 </style>

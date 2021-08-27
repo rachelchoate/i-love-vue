@@ -1,44 +1,28 @@
 <template>
     <div id="settings">
         <h2>Settings</h2>
-        <label html-for="canvas-height-input">
-            Game Board Height (in pixels)
+        <label html-for="cols-input">
+            Number of Columns to Generate
         </label>
         <input
             type="number"
-            id="canvas-height-input"
-            v-model.number="canvasHeight"
-            v-on:change="updateCanvasHeight"
+            id="cols-input"
+            v-model.number="cols"
+            v-on:change="updateGameWidth"
+            min="3"
+            max="25"
         />
         <br />
-        <label html-for="canvas-width-input">
-            Game Board Width (in pixels)
+        <label html-for="rows-input">
+            Number of Rows to Generate
         </label>
         <input
             type="number"
-            id="canvas-width-input"
-            v-model.number="canvasWidth"
-            v-on:change="updateCanvasWidth"
-        />
-        <br />
-        <label html-for="pixel-height-input">
-            Game Piece Height (in pixels)
-        </label>
-        <input
-            type="number"
-            id="pixel-height-input"
-            v-model.number="pixelHeight"
-            v-on:change="updatePixelHeight"
-        />
-        <br />
-        <label html-for="pixel-width-input">
-            Game Piece Width (in pixels)
-        </label>
-        <input
-            type="number"
-            id="pixel-width-input"
-            v-model.number="pixelWidth"
-            v-on:change="updatePixelWidth"
+            id="rows-input"
+            v-model.number="rows"
+            v-on:change="updateGameHeight"
+            min="3"
+            max="25"
         />
     </div>
 </template>
@@ -47,31 +31,19 @@
 export default {
     name: 'Settings',
     computed: {
-        canvasHeight() {
-            return this.$store.state.canvasHeight;
+        rows() {
+            return this.$store.state.rows;
         },
-        canvasWidth() {
-            return this.$store.state.canvasWidth;
-        },
-        pixelHeight() {
-            return this.$store.state.pixelHeight;
-        },
-        pixelWidth() {
-            return this.$store.state.pixelWidth;
+        cols() {
+            return this.$store.state.cols;
         },
     },
     methods: {
-        updateCanvasHeight(e) {
-            this.$store.commit('updateCanvasHeight', e.target.value);
+        updateGameHeight(e) {
+            this.$store.commit('updateGameHeight', e.target.value);
         },
-        updateCanvasWidth(e) {
-            this.$store.commit('updateCanvasWidth', e.target.value);
-        },
-        updatePixelHeight(e) {
-            this.$store.commit('updatePixelHeight', e.target.value);
-        },
-        updatePixelWidth(e) {
-            this.$store.commit('updatePixelWidth', e.target.value);
+        updateGameWidth(e) {
+            this.$store.commit('updateGameWidth', e.target.value);
         },
     },
 };
